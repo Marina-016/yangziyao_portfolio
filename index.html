@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨紫瑶 - AI产品经理作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Playfair+Display:wght@600;700&display=swap');
+        
+        * {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in { transform: translateY(20px); }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .mockup-shadow {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+        }
+        
+        .image-caption {
+            font-size: 0.875rem;
+            color: #64748b;
+            text-align: center;
+            margin-top: 0.75rem;
+            line-height: 1.5;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        /* 图片悬停效果 */
+        img {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* 渐变文字效果 */
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* 浮动动画 */
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* 脉冲效果 */
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(102, 126, 234, 0.6); }
+        }
+        
+        /* 滚动指示器 */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* 滚动条美化 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+        
+        /* 背景装饰 */
+        .bg-decoration {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .decoration-1 {
+            top: -100px;
+            right: -100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .decoration-2 {
+            bottom: -100px;
+            left: -100px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- 背景装饰 -->
+    <div class="bg-decoration decoration-1"></div>
+    <div class="bg-decoration decoration-2"></div>
+    
+    <!-- 滚动进度条 -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">Y</span>
+                    </div>
+                    <span class="font-bold text-gray-800">杨紫瑶</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="nav-link text-gray-600 hover:text-gray-900 text-sm">首页</a>
+                    <a href="#haojixing" class="nav-link text-gray-600 hover:text-gray-900 text-sm">好记星</a>
+                    <a href="#fanruan" class="nav-link text-gray-600 hover:text-gray-900 text-sm">帆软</a>
+                    <a href="#zinsight" class="nav-link text-gray-600 hover:text-gray-900 text-sm">Z-Insight</a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-gray-900 text-sm">其他项目</a>
+                </div>
+                <a href="mailto:ziyao_yang@126.com" class="gradient-bg text-white px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
+                    联系我
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <div class="fade-in stagger-1">
+                    <div class="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full mb-6">
+                        <i class="fas fa-robot text-purple-600 mr-2"></i>
+                        <span class="text-purple-700 text-sm font-medium">AI产品经理</span>
+                    </div>
+                </div>
+                
+                <h1 class="fade-in stagger-2 font-display text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+                    杨紫瑶
+                </h1>
+                
+                <p class="fade-in stagger-3 text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    将经济学思维与AI技术融合，打造有温度的智能产品
+                </p>
+                
+                <div class="fade-in stagger-4 flex flex-wrap justify-center gap-4 mb-12">
+                    <div class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm">
+                        <i class="fas fa-graduation-cap text-purple-500 mr-2"></i>
+                        <span class="text-sm text-gray-700">江南大学 · 应用经济学硕士</span>
+                    </div>
+                    <div class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm">
+                        <i class="fas fa-code text-blue-500 mr-2"></i>
+                        <span class="text-sm text-gray-700">Python · SQL · Figma</span>
+                    </div>
+                    <div class="flex items-center px-4 py-2 bg-white rounded-full shadow-sm">
+                        <i class="fas fa-brain text-pink-500 mr-2"></i>
+                        <span class="text-sm text-gray-700">LLM · RAG · Prompt Engineering</span>
+                    </div>
+                </div>
+                
+                <div class="fade-in stagger-4 flex justify-center space-x-4">
+                    <a href="#haojixing" class="gradient-bg text-white px-8 py-3 rounded-full font-medium hover:opacity-90 transition-all hover:scale-105 inline-flex items-center">
+                        查看作品 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="https://github.com/Marina-016/Z-Insight" target="_blank" class="bg-white text-gray-700 px-8 py-3 rounded-full font-medium border border-gray-200 hover:border-gray-300 transition-all hover:scale-105 inline-flex items-center">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <i class="fas fa-chevron-down text-gray-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- 好记星实习 -->
+    <section id="haojixing" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">好记星 AI 智能平板</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">AI 产品经理 · 2025.12 - 2026.03</p>
+            </div>
+
+            <!-- 项目概述 -->
+            <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 mb-12 border border-purple-100">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">项目概述</h3>
+                        <div class="space-y-4 text-gray-600">
+                            <p>针对教育平板缺乏个性化反馈的痛点，主导端到端 AI 教育平板核心功能架构，从 0 到 1 设计<strong class="text-purple-700">「布置作业-AI 批改-学情分析-AI 辅导-精准学」</strong>闭环。</p>
+                            <p>负责<strong class="text-purple-700">多端协同及 Web 后台业务流设计</strong>，拉通<strong class="text-purple-700">作业自动化批改全链路</strong>。原型通过评审且首版交付率 <strong class="text-purple-700">100%</strong>，产研阶段核心需求<strong class="text-purple-700">零延期、零重大 Bug</strong>，产研周期整体缩短 <strong class="text-purple-700">15%</strong>。</p>
+                        </div>
+                        
+                        <div class="mt-6 grid grid-cols-3 gap-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-purple-600">100%</div>
+                                <div class="text-xs text-gray-500">首版交付率</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-purple-600">26%</div>
+                                <div class="text-xs text-gray-500">停留时长提升</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-purple-600">8%</div>
+                                <div class="text-xs text-gray-500">幻觉率</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">核心职责</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-book text-purple-600 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">全链路作业系统设计</h4>
+                                    <p class="text-sm text-gray-600">老师/学生平板端、Web后台四端联动</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-chalkboard-teacher text-blue-600 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">AI 辅导功能设计</h4>
+                                    <p class="text-sm text-gray-600">基于 LLM 的启发式对话辅导</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-sliders-h text-yellow-600 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Prompt 工程与质量评测</h4>
+                                    <p class="text-sm text-gray-600">CoT/Few-Shot/Role Prompt 优化</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-mobile-alt text-green-600 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">家长管控与应用商城</h4>
+                                    <p class="text-sm text-gray-600">APP 权限管理、时间管控</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 好记星图片展示 -->
+            <div class="space-y-8">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">功能原型展示</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">单次作业总评</span>
+                        </div>
+                        <img src="ppt_images/slide_4_image_1.png" alt="好记星功能1" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                    </div>
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-calendar-week text-white text-sm"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">周作业批改报告</span>
+                        </div>
+                        <img src="ppt_images/slide_4_image_2.png" alt="好记星功能2" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                    </div>
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-chart-pie text-white text-sm"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">学情分析及教师点评</span>
+                        </div>
+                        <img src="ppt_images/slide_4_image_3.png" alt="好记星功能3" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-cogs text-white text-sm"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">作业后台系统</span>
+                        </div>
+                        <img src="ppt_images/5_作业后台系统.png" alt="好记星作业后台系统1" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                    </div>
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-cogs text-white text-sm"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">作业后台系统</span>
+                        </div>
+                        <img src="ppt_images/6_作业后台系统.png" alt="好记星作业后台系统2" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- 帆软实习 -->
+    <section id="fanruan" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">帆软软件</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">产品运营实习生 · 2025.02 - 2025.08</p>
+            </div>
+
+            <!-- 项目概述 -->
+            <div class="bg-gradient-to-br from-slate-100 to-gray-200 rounded-3xl p-8 mb-12 border-2 border-slate-400">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">项目概述</h3>
+                        <div class="space-y-4 text-gray-600">
+                            <p>主导<strong class="text-blue-700"> AI 行业应用、企业数字化</strong>等前沿赛道的行业研究。通过深度研究和专家访谈，分析 AI 在传统能源行业的落地场景（如<strong class="text-blue-700">预测性维护、智能调度</strong>），输出了行业深度报告 <strong class="text-blue-700">3 份</strong>，为公司产品迭代方向提供<strong class="text-blue-700">决策依据</strong>。</p>
+                            <p>深入跟进 <strong class="text-blue-700">TCL、壳牌、中国烟草</strong>等头部客户数字化转型项目。负责 <strong class="text-blue-700">15+</strong> 次客户需求沟通，精准识别 ToB 客户在<strong class="text-blue-700">数据治理、报表自动化</strong>方面的 <strong class="text-blue-700">30+</strong> 核心痛点。</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">核心成果</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white rounded-xl p-5 shadow-sm text-center">
+                                <div class="text-3xl font-bold text-slate-700 mb-1">15+</div>
+                                <div class="text-sm text-gray-500">客户需求沟通</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-5 shadow-sm text-center">
+                                <div class="text-3xl font-bold text-slate-700 mb-1">30+</div>
+                                <div class="text-sm text-gray-500">核心痛点识别</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-5 shadow-sm text-center">
+                                <div class="text-3xl font-bold text-slate-700 mb-1">200+</div>
+                                <div class="text-sm text-gray-500">专家用户库</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-5 shadow-sm text-center">
+                                <div class="text-3xl font-bold text-slate-700 mb-1">95%</div>
+                                <div class="text-sm text-gray-500">需求评审通过率</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 帆软图片展示 -->
+            <div class="space-y-8">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">ToB 项目案例</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-slate-200 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-br from-red-500 to-yellow-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-building text-white text-sm"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">中国烟草</span>
+                        </div>
+                        <img src="ppt_images/slide_7_image_6.png" alt="中国烟草数字化" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                        <p class="image-caption mt-4">中国烟草数字化人才建设系统设计</p>
+                    </div>
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-slate-200 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-tv text-white text-sm"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">TCL</span>
+                        </div>
+                        <img src="ppt_images/slide_8_image_7.png" alt="TCL数字化系统" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                        <p class="image-caption mt-4">TCL 数字化系统与数据治理方案</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-slate-200 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-chart-line text-white text-sm"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">壳牌 ChatBI</span>
+                        </div>
+                        <img src="ppt_images/slide_9_image_8.png" alt="壳牌ChatBI 1" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                        <p class="image-caption mt-4">壳牌 ChatBI 智能分析界面（一）</p>
+                    </div>
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-slate-200 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-chart-bar text-white text-sm"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">壳牌 ChatBI</span>
+                        </div>
+                        <img src="ppt_images/slide_9_image_9.png" alt="壳牌ChatBI 2" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                        <p class="image-caption mt-4">壳牌 ChatBI 智能分析界面（二）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- Z-Insight 重点项目 -->
+    <section id="zinsight" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full mb-6">
+                    <i class="fas fa-star text-purple-600 mr-2"></i>
+                    <span class="text-purple-700 text-sm font-medium">重点项目</span>
+                </div>
+                <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">Z-Insight · 真洞察</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">AI 增强新闻阅读洞察平台</p>
+                <div class="mt-6 flex justify-center">
+                    <a href="https://github.com/Marina-016/Z-Insight" target="_blank" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105">
+                        <i class="fab fa-github mr-2 text-xl"></i> GitHub 仓库
+                    </a>
+                </div>
+            </div>
+
+            <!-- 项目概述 -->
+            <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-8 mb-12 border border-purple-100">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">项目概述</h3>
+                        <p class="text-gray-600 mb-6">
+                            瞄准用户新闻阅读时<strong class="text-purple-700">只浏览不思考</strong>、<strong class="text-purple-700">内容无二次加工</strong>的痛点，对标主流 AI 阅读产品找准<strong class="text-purple-700">差异化定位</strong>，聚焦<strong class="text-purple-700">轻量化即时阅读分析</strong>场景，打造<strong class="text-purple-700">阅读+笔记摘录+AI 智能分析一体化闭环</strong>，解决深度资讯阅读的<strong class="text-purple-700">思辨与沉淀</strong>难题。
+                        </p>
+                        
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">核心亮点</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-bullseye text-purple-600 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900">差异化定位</h5>
+                                    <p class="text-sm text-gray-600">介于即时检索与长文内化之间</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-layer-group text-purple-600 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900">布鲁姆认知分类法</h5>
+                                    <p class="text-sm text-gray-600">产品化 3 种交互模式</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                                    <i class="fas fa-magic text-purple-600 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-900">系统化 Prompt 工程</h5>
+                                    <p class="text-sm text-gray-600">针对 3 种分析模式优化</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">三种交互模式</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-white rounded-2xl p-5 shadow-sm text-center border border-purple-200">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-search text-purple-600 text-xl"></i>
+                                </div>
+                                <h4 class="font-bold text-purple-700 mb-2">批判性分析</h4>
+                                <p class="text-xs text-gray-500">多角度深度解读</p>
+                            </div>
+                            <div class="bg-white rounded-2xl p-5 shadow-sm text-center border border-purple-200">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-question-circle text-purple-600 text-xl"></i>
+                                </div>
+                                <h4 class="font-bold text-purple-700 mb-2">深度提问</h4>
+                                <p class="text-xs text-gray-500">启发式思考引导</p>
+                            </div>
+                            <div class="bg-white rounded-2xl p-5 shadow-sm text-center border border-purple-200">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-quote-left text-purple-600 text-xl"></i>
+                                </div>
+                                <h4 class="font-bold text-purple-700 mb-2">提炼金句</h4>
+                                <p class="text-xs text-gray-500">重要内容摘要</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Z-Insight 图片展示 - 放大展示 -->
+            <div class="space-y-8">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">产品界面展示</h3>
+                
+                <!-- Z-Insight 两栏分布主界面 - 单独展示 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-purple-100 mb-8 transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                        📱 核心界面
+                    </div>
+                    <img src="ppt_images/10_Z-Insight 两栏分布主界面.png" alt="Z-Insight两栏分布主界面" class="w-full h-auto rounded-2xl shadow-lg border border-gray-100">
+                    <p class="image-caption text-lg mt-6 font-medium text-gray-700">Z-Insight 两栏分布主界面</p>
+                </div>
+                
+                <!-- 点击"开启深度洞察" 展开三栏布局 提问模式 - 单独展示 -->
+                <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-question text-white"></i>
+                        </div>
+                        <span class="font-bold text-gray-800">提问模式</span>
+                    </div>
+                    <img src="ppt_images/11_点击开启深度洞察 展开三栏布局 提问模式为例.png" alt="Z-Insight提问模式" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                    <p class="image-caption mt-4">点击"开启深度洞察" 展开三栏布局 提问模式</p>
+                </div>
+                
+                <!-- 批判模式与总结模式 - 并排展示 -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-critic text-white"></i>
+                            </div>
+                            <span class="font-bold text-gray-800">批判模式</span>
+                        </div>
+                        <img src="ppt_images/12_批判模式.png" alt="Z-Insight批判模式" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                        <p class="image-caption mt-4">批判模式</p>
+                    </div>
+                    <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-file-alt text-white"></i>
+                            </div>
+                            <span class="font-bold text-gray-800">总结模式</span>
+                        </div>
+                        <img src="ppt_images/13_总结模式.png" alt="Z-Insight总结模式" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                        <p class="image-caption mt-4">总结模式</p>
+                    </div>
+                </div>
+                
+                <!-- 洞察知识库界面 - 单独展示 -->
+                <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl">
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-database text-white"></i>
+                        </div>
+                        <span class="font-bold text-gray-800">洞察知识库</span>
+                    </div>
+                    <img src="ppt_images/14_洞察知识库界面.png" alt="Z-Insight洞察知识库" class="w-full h-auto rounded-xl shadow-md border border-gray-100">
+                    <p class="image-caption mt-4">洞察知识库界面</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- 其他项目 -->
+    <section id="projects" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">其他项目作品</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">从 0 到 1 的产品实践，用数据说话</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 金融文本语义匹配项目 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-lg">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-bar text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">金融文本语义匹配</h3>
+                                <p class="text-emerald-600 text-sm font-medium">双大模型串联量化指标构建</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6">针对 5w+ 份海量年报文本，运用生成式+判别式双模型串联架构，实现精准指标量化。</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-link text-emerald-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">生成式（Qwen3.5）+ 判别式（BGE-m3）串联</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-filter text-emerald-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Embedding 高频词初筛解决 Token 窗口限制</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-server text-emerald-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Ollama 本地部署，低成本高可复现</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 永固红韵 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-lg">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-leaf text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">永固红韵</h3>
+                                <p class="text-red-600 text-sm font-medium">乡村振兴旅游电商平台</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6">针对宁夏东永固村旅游资源数字化程度低、获客难的痛点，设计集内容科普+电商交易+旅游服务于一体的小程序。</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-seedling text-red-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">云认养功能：物联网远程监控+周期购</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-map-marked-alt text-red-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">地图打卡：LBS 互动提升留存</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-palette text-red-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">红韵国潮视觉设计，10+ 关键页面</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 云悦充电桩 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-lg">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-bolt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">云悦</h3>
+                                <p class="text-blue-600 text-sm font-medium">智能充电桩管理系统</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6">针对新能源充电桩行业运维缺失、管理不畅痛点，设计硬件+云平台+用户端 APP 一体化解决方案。</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-brain text-blue-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">AI 故障智能诊断，自动预警</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-heartbeat text-blue-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">电池寿命预测，历史数据拟合分析</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-award text-blue-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">互联网+校赛铜奖</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 满堂星 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-lg">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-film text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">满堂星</h3>
+                                <p class="text-amber-600 text-sm font-medium">短剧 IP 孵化与投资平台</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6">针对短剧行业 IP 孵化与投资需求，设计短剧 IP 孵化与投资平台。运用聚类分析思维进行用户细分，为产品功能差异化设计提供支撑。</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-user-friends text-amber-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">用户细分：短剧消费者+IP 投资人</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-chart-pie text-amber-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">聚类分析：问卷与访谈数据驱动</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <div class="w-5 h-5 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-award text-amber-600 text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">品牌策划国赛金奖</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">专业技能</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">AI 工具</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">LLM</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">RAG</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Prompt Engineering</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Dify</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">LangGraph</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-pie text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">数据分析</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">SQL</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Excel</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">PowerBI</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">FineBI</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-pencil-ruler text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">产品设计</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">Figma</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">Axure</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">PRD 撰写</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">用户研究</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">期待与你合作</h2>
+            <p class="text-purple-100 text-lg mb-10 max-w-2xl mx-auto">
+                如果你对我的作品感兴趣，或者想要探讨 AI 产品相关的话题，欢迎随时联系我！
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-10">
+                <a href="mailto:ziyao_yang@126.com" class="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold hover:bg-purple-50 transition-all hover:scale-105 inline-flex items-center shadow-xl">
+                    <i class="fas fa-envelope mr-3 text-xl"></i>
+                    ziyao_yang@126.com
+                </a>
+                <a href="tel:18307012301" class="bg-white/20 text-white px-8 py-4 rounded-2xl font-semibold border border-white/30 hover:bg-white/30 transition-all hover:scale-105 inline-flex items-center">
+                    <i class="fas fa-phone mr-3 text-xl"></i>
+                    18307012301
+                </a>
+            </div>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/Marina-016/Z-Insight" target="_blank" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all hover:scale-110">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2026 杨紫瑶. All rights reserved.</p>
+            <p class="mt-2 text-sm">用产品思维，创造 AI 价值</p>
+        </div>
+    </footer>
+
+    <script>
+        // 滚动进度条
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Navbar background change on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>

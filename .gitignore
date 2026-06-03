@@ -1,0 +1,33 @@
+# 临时文件
+*.tmp
+*.temp
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 备份文件
+*.bak
+*.backup
+
+# Python
+__pycache__/
+*.pyc
+
+# 其他不需要的文件
+*.pptx
+*.pdf
+*.docx
+*.zip
+read_ppt.py
+ppt_content.txt
+portfolio.html
+云悦.pdf
+作品集.html
+商城.png
+我的.png
+杨紫瑶 - 产品作品集原型展示.pdf
+电商平台pdf.pdf
+策划书-初.docx
+简历资料.zip
+首页.png
